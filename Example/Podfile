@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'YYNetworkAdapter_Example' do
+  pod 'YYNetworkAdapter', :path => '../'
+
+  target 'YYNetworkAdapter_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

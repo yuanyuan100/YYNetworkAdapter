@@ -1,0 +1,16 @@
+PODS:
+  - YYNetworkAdapter (0.1.0)
+
+DEPENDENCIES:
+  - YYNetworkAdapter (from `../`)
+
+EXTERNAL SOURCES:
+  YYNetworkAdapter:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  YYNetworkAdapter: 62434888ac656da0715fc191d0c2e93a507bcb3f
+
+PODFILE CHECKSUM: 72130a79069e27afbd2c941d6dac982b3a1f8e34
+
+COCOAPODS: 1.8.4
