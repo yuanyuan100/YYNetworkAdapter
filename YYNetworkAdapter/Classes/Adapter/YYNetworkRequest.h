@@ -28,6 +28,14 @@ typedef NS_ENUM(NSInteger, YYResponseSerializerType) {
     YYResponseSerializerTypeXMLParser,
 };
 
+/// 设置响应序列化的类型
+typedef NS_ENUM(NSInteger, YYNetworkRequestDataType) {
+    YYNetworkRequestUnknownDataType = 0,
+    YYNetworkRequestNormalDataType,
+    YYNetworkRequestUploadDataType,
+    YYNetworkRequestDownloadDataType,
+};
+
 @interface YYNetworkRequest : NSObject <NSCopying, NSMutableCopying>
 
 // 便利的初始化方法
@@ -56,6 +64,9 @@ typedef NS_ENUM(NSInteger, YYResponseSerializerType) {
 
 /// 请求参数
 @property (nonatomic, copy, readonly, nullable) NSDictionary *parameters;
+
+/// 请求数据类型。
+@property (nonatomic, readonly) YYNetworkRequestDataType dataType;
 
 /// 设置超时时间
 @property (nonatomic, readonly) NSTimeInterval timeoutInterval;
@@ -113,6 +124,9 @@ typedef NS_ENUM(NSInteger, YYResponseSerializerType) {
 
 /// 请求参数
 @property (nonatomic, copy, nullable) NSDictionary *parameters;
+
+/// 请求数据类型。
+@property (nonatomic) YYNetworkRequestDataType dataType;
 
 /// 设置超时时间
 @property (nonatomic) NSTimeInterval timeoutInterval;

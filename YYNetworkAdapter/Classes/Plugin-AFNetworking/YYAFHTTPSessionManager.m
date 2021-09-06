@@ -11,12 +11,12 @@
 @implementation YYAFHTTPSessionManager
 
 + (instancetype)manager {
-    static YYAFHTTPSessionManager *_session;
+    static YYAFHTTPSessionManager *session;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _session = [[super allocWithZone:nil] init];
+        session = [[super allocWithZone:nil] init];
     });
-    return  _session;
+    return  session;
 }
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone {

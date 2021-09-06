@@ -32,6 +32,9 @@
 /// 请求参数
 @property (nonatomic, copy, nullable) NSDictionary *parameters;
 
+/// 请求数据类型。
+@property (nonatomic) YYNetworkRequestDataType dataType;
+
 /// 设置超时时间
 @property (nonatomic) NSTimeInterval timeoutInterval;
 
@@ -85,6 +88,7 @@
     request.method                     = self.method;
     request.header                     = self.header;
     request.parameters                 = self.parameters;
+    request.dataType                   = self.dataType;
     request.allowsCellularAccess       = self.allowsCellularAccess;
     request.timeoutInterval            = self.timeoutInterval;
     request.requestSerializerType      = self.requestSerializerType;
@@ -107,6 +111,7 @@
     request.method                     = self.method;
     request.header                     = self.header;
     request.parameters                 = self.parameters;
+    request.dataType                   = self.dataType;
     request.allowsCellularAccess       = self.allowsCellularAccess;
     request.timeoutInterval            = self.timeoutInterval;
     request.requestSerializerType      = self.requestSerializerType;
@@ -131,6 +136,7 @@
     self.allowsCellularAccess = YES;
     self.requestSerializerType = YYRequestSerializerTypeJSON;
     self.responseSerializerType = YYResponseSerializerTypeJSON;
+    self.dataType = YYNetworkRequestUnknownDataType;
 }
 
 - (NSMutableDictionary *)propertyStoreForProtocol {
@@ -151,6 +157,7 @@
 @dynamic method;
 @dynamic header;
 @dynamic parameters;
+@dynamic dataType;
 @dynamic allowsCellularAccess;
 @dynamic timeoutInterval;
 @dynamic requestSerializerType;
