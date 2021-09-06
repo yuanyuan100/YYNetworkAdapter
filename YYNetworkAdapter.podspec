@@ -30,14 +30,20 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'YYNetworkAdapter/Classes/**/*'
+  s.source_files = 'YYNetworkAdapter/Classes/**/*.{h,m}'
+  s.public_header_files = 'YYNetworkAdapter/Classes/**/*.{h}'
+  
   s.prefix_header_contents = '#import "YYNetworkProtocolClient.h"', '#import "YYNetworkRequest.h"', '#import "YYNetworkProtocol.h"'
   
-  # s.resource_bundles = {
-  #   'YYNetworkAdapter' => ['YYNetworkAdapter/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec 'Adapter' do |ss|
+      ss.source_files = 'YYNetworkAdapter/Classes/Adapter/*.{h,m}'
+  end
+  
+  s.subspec 'Plugin-AFNetworking' do |ss|
+      ss.dependency 'YYNetworkAdapter/Adapter'
+      ss.dependency 'AFNetworking'
+      s.prefix_header_contents = '#import <AFNetworking/AFNetworking.h>'
+      ss.source_files = 'YYNetworkAdapter/Classes/Plugin-AFNetworking/*.{h,m}'
+  end
+  
 end

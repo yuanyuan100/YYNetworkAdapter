@@ -1,15 +1,41 @@
 PODS:
-  - YYNetworkAdapter (0.1.0)
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - YYNetworkAdapter (0.1.0):
+    - YYNetworkAdapter/Adapter (= 0.1.0)
+    - YYNetworkAdapter/Plugin-AFNetworking (= 0.1.0)
+  - YYNetworkAdapter/Adapter (0.1.0)
+  - YYNetworkAdapter/Plugin-AFNetworking (0.1.0):
+    - AFNetworking
+    - YYNetworkAdapter/Adapter
 
 DEPENDENCIES:
   - YYNetworkAdapter (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
 
 EXTERNAL SOURCES:
   YYNetworkAdapter:
     :path: "../"
 
 SPEC CHECKSUMS:
-  YYNetworkAdapter: 8c1fdd5b2256fc641363ca5bd9fe9aec132c483a
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  YYNetworkAdapter: 06fb0746bb27209ec7a883109a06320008a4e3c1
 
 PODFILE CHECKSUM: 72130a79069e27afbd2c941d6dac982b3a1f8e34
 

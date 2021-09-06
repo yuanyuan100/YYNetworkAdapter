@@ -10,7 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 /// 进度回调
 typedef void(^YYAFNetworkProgressBlock)(NSProgress *);
 
