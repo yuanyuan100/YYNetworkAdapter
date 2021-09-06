@@ -7,6 +7,10 @@
 
 #import "YYNetworkRequest.h"
 
+NSString * const YYNetworkRequestAFNetworking_data = @"AFNetworking_data";
+NSString * const YYNetworkRequestAFNetworking_upload = @"AFNetworking_upload";
+NSString * const YYNetworkRequestAFNetworking_dowload = @"AFNetworking_dowload";
+
 @interface YYNetworkRequest ()
 /// 如果请求传递了url则直接使用，如果url为nil，则在拦截器中需要将scheme、host、port、path拼接起来
 @property (nonatomic, copy, nullable) NSString *url;
@@ -31,9 +35,6 @@
 
 /// 请求参数
 @property (nonatomic, copy, nullable) NSDictionary *parameters;
-
-/// 请求数据类型。
-@property (nonatomic) YYNetworkRequestDataType dataType;
 
 /// 设置超时时间
 @property (nonatomic) NSTimeInterval timeoutInterval;
@@ -88,7 +89,6 @@
     request.method                     = self.method;
     request.header                     = self.header;
     request.parameters                 = self.parameters;
-    request.dataType                   = self.dataType;
     request.allowsCellularAccess       = self.allowsCellularAccess;
     request.timeoutInterval            = self.timeoutInterval;
     request.requestSerializerType      = self.requestSerializerType;
@@ -111,7 +111,6 @@
     request.method                     = self.method;
     request.header                     = self.header;
     request.parameters                 = self.parameters;
-    request.dataType                   = self.dataType;
     request.allowsCellularAccess       = self.allowsCellularAccess;
     request.timeoutInterval            = self.timeoutInterval;
     request.requestSerializerType      = self.requestSerializerType;
@@ -130,13 +129,12 @@
 
 /// 配置默认参数
 - (void)prepareForInitData {
-    self.gatewayIdentifier = @"AFNetworking-data";
+    self.gatewayIdentifier = YYNetworkRequestAFNetworking_data;
     self.method = @"POST";
     self.timeoutInterval = 60;
     self.allowsCellularAccess = YES;
     self.requestSerializerType = YYRequestSerializerTypeJSON;
     self.responseSerializerType = YYResponseSerializerTypeJSON;
-    self.dataType = YYNetworkRequestUnknownDataType;
 }
 
 - (NSMutableDictionary *)propertyStoreForProtocol {
@@ -157,7 +155,6 @@
 @dynamic method;
 @dynamic header;
 @dynamic parameters;
-@dynamic dataType;
 @dynamic allowsCellularAccess;
 @dynamic timeoutInterval;
 @dynamic requestSerializerType;

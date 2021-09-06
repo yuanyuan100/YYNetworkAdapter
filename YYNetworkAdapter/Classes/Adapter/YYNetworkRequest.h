@@ -28,13 +28,9 @@ typedef NS_ENUM(NSInteger, YYResponseSerializerType) {
     YYResponseSerializerTypeXMLParser,
 };
 
-/// 设置响应序列化的类型
-typedef NS_ENUM(NSInteger, YYNetworkRequestDataType) {
-    YYNetworkRequestUnknownDataType = 0,
-    YYNetworkRequestNormalDataType,
-    YYNetworkRequestUploadDataType,
-    YYNetworkRequestDownloadDataType,
-};
+extern NSString * const YYNetworkRequestAFNetworking_data;
+extern NSString * const YYNetworkRequestAFNetworking_upload;
+extern NSString * const YYNetworkRequestAFNetworking_dowload;
 
 @interface YYNetworkRequest : NSObject <NSCopying, NSMutableCopying>
 
@@ -56,7 +52,7 @@ typedef NS_ENUM(NSInteger, YYNetworkRequestDataType) {
 /// For example, in the URL http://www.example.com/index.html, the path is /index.html.
 @property (nonatomic, copy, readonly, nullable) NSString *path;
 
-/// 请求方式。默认nil
+/// 请求方式。默认POST。不区分大小写
 @property (nonatomic, copy, readonly, nullable) NSString *method;
 
 /// 请求头
@@ -64,9 +60,6 @@ typedef NS_ENUM(NSInteger, YYNetworkRequestDataType) {
 
 /// 请求参数
 @property (nonatomic, copy, readonly, nullable) NSDictionary *parameters;
-
-/// 请求数据类型。
-@property (nonatomic, readonly) YYNetworkRequestDataType dataType;
 
 /// 设置超时时间
 @property (nonatomic, readonly) NSTimeInterval timeoutInterval;
@@ -88,7 +81,10 @@ typedef NS_ENUM(NSInteger, YYNetworkRequestDataType) {
 
 /// 本地网关标识符
 /// 决定该请求通过哪一网络框架发送。
-/// 当前只配置了AFNetworking。
+/// 当前只配置了AFNetworking中的三种。
+/// AFNetworking-data
+/// AFNetworking-upload
+/// AFNetworking-dowload
 @property (nonatomic, copy, readonly) NSString *gatewayIdentifier;
 
 /// 扩展对象，用于处理自定义事务
@@ -124,9 +120,6 @@ typedef NS_ENUM(NSInteger, YYNetworkRequestDataType) {
 
 /// 请求参数
 @property (nonatomic, copy, nullable) NSDictionary *parameters;
-
-/// 请求数据类型。
-@property (nonatomic) YYNetworkRequestDataType dataType;
 
 /// 设置超时时间
 @property (nonatomic) NSTimeInterval timeoutInterval;
