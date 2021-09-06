@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 请求配置
 @property (nonatomic, readonly, copy) NSURLSessionConfiguration *configuration;
 
+/// 安全连接设置
+@property (nonatomic, strong) AFSecurityPolicy *securityPolicy;
+
 /// 进度
 - (YYAFNetworkSessionTask *)dataTaskWithRequest:(YYNetworkRequest *)request
                             uploadProgress:(nullable YYAFNetworkProgressBlock)uploadProgress

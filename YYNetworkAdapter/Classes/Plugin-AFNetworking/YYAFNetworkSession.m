@@ -34,6 +34,13 @@
     return session;
 }
 
+- (AFSecurityPolicy *)securityPolicy {
+    if (!_securityPolicy) {
+        _securityPolicy = [AFSecurityPolicy defaultPolicy];
+    }
+    return _securityPolicy;
+}
+
 - (YYAFNetworkSessionTask *)dataTaskWithRequest:(YYNetworkRequest *)request
                                    success:(YYNetworkSuccessBlock)success
                                    failure:(YYNetworkFailureBlock)failure {

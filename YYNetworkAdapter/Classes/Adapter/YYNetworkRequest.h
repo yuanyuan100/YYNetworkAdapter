@@ -69,6 +69,9 @@ typedef NS_ENUM(NSInteger, YYResponseSerializerType) {
 /// 设置响应数据序列化类型
 @property (nonatomic, readonly) YYResponseSerializerType responseSerializerType;
 
+/// 设置接受数据类型
+@property (nonatomic, copy, readonly, nullable) NSSet <NSString *> *acceptableContentTypes;
+
 /// 该请求不被以下拦截器拦截, class必须是YYNetworkProtocol的子类
 @property (nonatomic, copy, readonly, nullable) NSArray<Class> *notAllowInterceptedSources;
 
@@ -122,6 +125,9 @@ typedef NS_ENUM(NSInteger, YYResponseSerializerType) {
 
 /// 设置响应数据序列化类型
 @property (nonatomic) YYResponseSerializerType responseSerializerType;
+
+/// 设置接受数据类型
+@property (nonatomic, copy, readonly, nullable) NSSet <NSString *> *acceptableContentTypes;
 
 /// 该请求不被以下拦截器拦截, class必须是YYNetworkProtocol的子类
 @property (nonatomic, copy, nullable) NSArray<Class> *notAllowInterceptedSources;

@@ -30,8 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 如果阻止请求后请在该方法中重新发起请求, 此方法必须重写
 - (void)startLoading;
 
-/// 外部(业务)发起取消请求。可选重写。重写后需要调用 [protocol: didFailWithError:]
-- (void)stopLoadingWithError:(NSError *)error;
+/// 外部(业务)发起取消请求。可选重写。
+- (void)stopLoadingWithError:(NSError *)error NS_REQUIRES_SUPER;
 
 @end
 

@@ -42,7 +42,7 @@ TODO: Add long description of the pod here.
   s.subspec 'Plugin-AFNetworking' do |ss|
       ss.dependency 'YYNetworkAdapter/Adapter'
       ss.dependency 'AFNetworking'
-      s.prefix_header_contents = '#import <AFNetworking/AFNetworking.h>'
+      ss.prefix_header_contents = '#import <AFNetworking/AFNetworking.h>', '#import "YYNerworkError.h"'
       ss.source_files = 'YYNetworkAdapter/Classes/Plugin-AFNetworking/*.{h,m}'
   end
   

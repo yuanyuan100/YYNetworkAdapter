@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol YYAFNetworkProtocolClient <YYNetworkProtocolClient>
 
+
+
 /// 上传进度回调
 - (void)protocol:(YYNetworkProtocol *)protocol uploadProgress:(NSProgress *)progress;
 
