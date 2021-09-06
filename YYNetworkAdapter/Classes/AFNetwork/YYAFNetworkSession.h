@@ -12,8 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YYAFNetworkSession : YYBaseSession
 
-/// 伪单例。仅用来共享数据poolOfProtocol 和 poolOfTask
-/// 也可以自己初始化一个YYAFNetworkSession。
+/// 伪单例。仅用来共享数据poolOfProtocol 和 poolOfTask。建议使用
+
+/// 当有特殊需求，两套网络完全不适用时，也可以自己初始化一个YYAFNetworkSession对象，并持有。
+
 @property (class, readonly) YYAFNetworkSession *sharedSession;
 /// 伪单例
 + (YYAFNetworkSession *)sharedSessionWithConfiguration:(NSURLSessionConfiguration *)configuration;
