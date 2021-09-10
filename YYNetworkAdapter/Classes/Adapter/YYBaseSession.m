@@ -7,7 +7,6 @@
 
 #import "YYBaseSession.h"
 
-
 @implementation YYBaseSession
 
 - (YYBaseSessionTask *)dataTaskWithRequest:(YYNetworkRequest *)request

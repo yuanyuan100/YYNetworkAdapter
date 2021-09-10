@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class YYNetworkRequest;
 
 NS_ASSUME_NONNULL_BEGIN
 

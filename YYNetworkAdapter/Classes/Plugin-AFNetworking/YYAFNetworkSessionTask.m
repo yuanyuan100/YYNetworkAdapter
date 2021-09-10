@@ -7,6 +7,7 @@
 
 #import "YYAFNetworkSessionTask.h"
 #import "YYAFNetworkProtocolClient.h"
+#import <YYNetworkAdapter/YYNetworkProtocol.h>
 
 @interface YYAFNetworkSessionTask () <YYAFNetworkProtocolClient>
 

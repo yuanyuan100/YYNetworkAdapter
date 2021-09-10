@@ -7,6 +7,12 @@
 
 #import "YYAFNetworkDataProtocol.h"
 #import "YYAFHTTPSessionManager.h"
+#import "YYAFNetworkProtocolClient.h"
+#import "YYAFNetworkSessionTask.h"
+#import "YYAFNetworkSession.h"
+#import <YYNetworkAdapter/YYNerworkError.h>
+#import <YYNetworkAdapter/YYNetworkRequest.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface YYAFNetworkDataProtocol ()
 @property (nonatomic, weak, readonly) id<YYAFNetworkProtocolClient> client;

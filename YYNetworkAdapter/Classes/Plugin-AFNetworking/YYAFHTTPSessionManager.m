@@ -7,6 +7,7 @@
 
 #import "YYAFHTTPSessionManager.h"
 #import "YYAFNetworkSession.h"
+#import <AFNetworking/AFNetworking.h>
 
 @implementation YYAFHTTPSessionManager
 

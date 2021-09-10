@@ -6,6 +6,7 @@
 //
 
 #import "YYNetworkPoolOfProtocol.h"
+#import "YYNetworkProtocol.h"
 
 @interface YYNetworkPoolOfProtocol ()
 

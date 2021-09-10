@@ -112,7 +112,7 @@ extern NSString * const YYNetworkRequestAFNetworking_dowload;
 /// For example, in the URL http://www.example.com/index.html, the path is /index.html.
 @property (nonatomic, copy, nullable) NSString *path;
 
-/// 请求方式。默认nil
+/// 请求方式。默认POST。不区分大小写
 @property (nonatomic, copy, nullable) NSString *method;
 
 /// 请求头

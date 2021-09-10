@@ -13,5 +13,8 @@
 #import "YYAFNetworkSession.h"
 #import "YYAFNetworkSessionTask.h"
 #import "YYAFNetworkProtocolClient.h"
+#import "YYNerworkError.h"
+
+#import "YYAFNetworkDataProtocol.h"
 
 #endif /* YYNetworkAdapter_h */

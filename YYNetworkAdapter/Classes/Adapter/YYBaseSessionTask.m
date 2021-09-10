@@ -6,6 +6,8 @@
 //
 
 #import "YYBaseSessionTask.h"
+#import "YYNetworkRequest.h"
+#import "YYNetworkProtocol.h"
 
 @implementation YYBaseSessionTask
 

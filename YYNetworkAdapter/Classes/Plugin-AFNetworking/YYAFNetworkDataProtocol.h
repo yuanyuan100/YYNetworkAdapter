@@ -5,7 +5,7 @@
 //  Created by YuanYuan Peng on 2021/9/6.
 //
 
-#import <YYNetworkAdapter/YYNetworkAdapter.h>
+#import <YYNetworkAdapter/YYNetworkProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

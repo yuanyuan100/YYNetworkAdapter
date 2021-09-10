@@ -6,6 +6,7 @@
 //
 
 #import "YYNetworkProtocol.h"
+#import "YYNetworkRequest.h"
 
 @implementation YYNetworkProtocol
 

@@ -7,6 +7,7 @@
 
 #import "YYBaseSession.h"
 #import "YYAFNetworkSessionTask.h"
+#import <AFNetworking/AFNetworking.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (YYAFNetworkSession *)sessionWithConfiguration:(NSURLSessionConfiguration *)configuration;
 
 /// 请求配置
-@property (nonatomic, readonly, copy) NSURLSessionConfiguration *configuration;
+@property (nonatomic, readonly, copy, nullable) NSURLSessionConfiguration *configuration;
 
 /// 安全连接设置
 @property (nonatomic, strong) AFSecurityPolicy *securityPolicy;

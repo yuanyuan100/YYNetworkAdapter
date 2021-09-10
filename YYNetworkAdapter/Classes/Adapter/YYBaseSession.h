@@ -10,6 +10,7 @@
 #import "YYNetworkPoolOfSessionTask.h"
 #import "YYBaseSessionTask.h"
 #import "YYNetworkRequest.h"
+#import "YYNetworkProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -6,9 +6,12 @@
 //
 
 #import "YYAFNetworkSession.h"
+#import <YYNetworkAdapter/YYNetworkProtocol.h>
 
 @interface YYAFNetworkSession ()
+
 @property (nonatomic, copy) NSURLSessionConfiguration *configuration;
+
 @end
 
 @implementation YYAFNetworkSession
@@ -75,7 +78,6 @@
     [self.poolOfTask addTask:task];
     
     return task;
-    
 }
 
 - (YYAFNetworkSessionTask *)uploadTaskWithRequest:(YYNetworkRequest *)request
@@ -97,7 +99,6 @@
     [self.poolOfTask addTask:task];
     
     return task;
-    
 }
 
 - (YYAFNetworkSessionTask *)downloadTaskWithRequest:(YYNetworkRequest *)request
@@ -119,7 +120,6 @@
     [self.poolOfTask addTask:task];
     
     return task;
-    
 }
 
 @end
@@ -144,10 +144,7 @@
     [task start];
     
     return task;
-    
 }
-
-
 
 - (YYAFNetworkSessionTask *)dataTaskInProtocol:(YYNetworkProtocol *)protocol
                                    withRequest:(YYNetworkRequest *)request
@@ -218,7 +215,6 @@
     [task start];
     
     return task;
-    
 }
 
 @end
