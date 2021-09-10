@@ -6,9 +6,10 @@
 //
 
 #import "YYNetworkChain.h"
+#import "YYNetworkProtocolClient.h"
 @class YYNetworkRequest;
 @class YYNetworkProtocol;
-@protocol YYNetworkProtocolClient;
+
 
 NS_ASSUME_NONNULL_BEGIN
 
