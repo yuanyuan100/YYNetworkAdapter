@@ -8,12 +8,14 @@
 #import "YYBaseSession.h"
 
 @implementation YYBaseSession
+@synthesize poolOfProtocol = _poolOfProtocol;
+@synthesize poolOfTask = _poolOfTask;
 
 - (YYBaseSessionTask *)dataTaskWithRequest:(YYNetworkRequest *)request
                                    success:(YYNetworkSuccessBlock)success
                                    failure:(YYNetworkFailureBlock)failure {
     YYBaseSessionTask *task = [[YYBaseSessionTask alloc] init];
-    
+    task.session = self;
     task.success = success;
     task.failure = failure;
     task.request = request;
@@ -65,4 +67,13 @@
     
 }
 
+- (BOOL)registerProtocol:(Class)protocol {
+    return [self.poolOfProtocol addProtocol:protocol];
+}
+
+- (void)unregisterProtocol:(Class)protocol {
+    [self.poolOfProtocol removeProtocol:protocol];
+}
+
 @end
+

@@ -8,6 +8,7 @@
 #import "YYBaseSessionTask.h"
 #import "YYNetworkRequest.h"
 #import "YYNetworkProtocol.h"
+#import "YYBaseSession.h"
 
 @implementation YYBaseSessionTask
 
@@ -37,7 +38,7 @@
     
     ///如果是任务链中最初的一个，则说明响应已回调到最上层。因此释放这条链
     if (self.pre == nil) {
-        //[[LYURLSessionX sharedSession].taskPool removeTask:self];
+        [self.session.poolOfTask removeTask:self];
     }
 }
 
@@ -49,7 +50,7 @@
     
     ///如果是任务链中最初的一个，则说明响应已回调到最上层。因此释放这条链
     if (self.pre == nil) {
-        //[[LYURLSessionX sharedSession].taskPool removeTask:self];
+        [self.session.poolOfTask removeTask:self];
     }
 }
 

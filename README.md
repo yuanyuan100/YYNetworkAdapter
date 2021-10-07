@@ -22,7 +22,7 @@ pod 'YYNetworkAdapter'
 
 ## Author
 
-yuanyuan peng, pengyuanyuan@tngdigital.com.my
+yuanyuan peng, 469092943@qq.com
 
 ## License
 

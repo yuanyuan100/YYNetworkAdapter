@@ -49,6 +49,7 @@
                                    failure:(YYNetworkFailureBlock)failure {
     YYAFNetworkSessionTask *task = [[YYAFNetworkSessionTask alloc] init];
     
+    task.session = self;
     task.success = success;
     task.failure = failure;
     task.request = request;
@@ -67,6 +68,7 @@
                                         failure:(YYNetworkFailureBlock)failure {
     YYAFNetworkSessionTask *task = [[YYAFNetworkSessionTask alloc] init];
     
+    task.session = self;
     task.uploadProgress = uploadProgress;
     task.success = success;
     task.failure = failure;
@@ -87,6 +89,7 @@
                                           failure:(YYNetworkFailureBlock)failure {
     YYAFNetworkSessionTask *task = [[YYAFNetworkSessionTask alloc] init];
     
+    task.session = self;
     task.constructingBody = block;
     task.uploadProgress = uploadProgress;
     task.success = success;
@@ -107,7 +110,7 @@
                                             success:(YYNetworkSuccessBlock)success
                                             failure:(YYNetworkFailureBlock)failure {
     YYAFNetworkSessionTask *task = [[YYAFNetworkSessionTask alloc] init];
-    
+    task.session = self;
     task.downloadProgress = downloadProgress;
     task.destination = block;
     task.success = success;
@@ -136,6 +139,7 @@
     task.pre = taskOfProtocol;
     taskOfProtocol.next = task;
     
+    task.session = self;
     task.success = success;
     task.failure = failure;
     task.request = request;
@@ -157,6 +161,7 @@
     task.pre = taskOfProtocol;
     taskOfProtocol.next = task;
     
+    task.session = self;
     task.uploadProgress = uploadProgress;
     task.success = success;
     task.failure = failure;
@@ -180,6 +185,7 @@
     task.pre = taskOfProtocol;
     taskOfProtocol.next = task;
     
+    task.session = self;
     task.constructingBody = block;
     task.uploadProgress = uploadProgress;
     task.success = success;
@@ -205,6 +211,7 @@
     task.pre = taskOfProtocol;
     taskOfProtocol.next = task;
     
+    task.session = self;
     task.destination = block;
     task.downloadProgress = downloadProgress;
     task.success = success;

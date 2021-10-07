@@ -40,10 +40,13 @@ typedef NSURL * _Nonnull(^YYAFNetworkDownloadDestinationBlock)(NSURL *, NSURLRes
 
 @interface YYAFNetworkSessionTask (Convenient)
 
+/// 暂停。如果还在拦截其中执行，则直接取消请求
 - (void)suspend;
 
+/// 重启请求
 - (void)resume;
 
+/// 取消请求
 - (void)cancel;
 
 @end

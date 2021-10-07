@@ -9,6 +9,7 @@
 #import "YYNetworkProtocolClient.h"
 @class YYNetworkRequest;
 @class YYNetworkProtocol;
+@class YYBaseSession;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -24,7 +25,10 @@ typedef void(^YYNetworkFailureBlock)(NSError *);
 /// YYNetworkAdapter中的请求
 @property (nonatomic, strong) __kindof YYNetworkRequest *request;
 
-/// 本条链上第一个task需要遍历的protocol pool
+/// 会话对象
+@property (nonatomic, weak, nullable) __kindof YYBaseSession *session;
+
+/// 该链上第一个task需要遍历的protocol pool
 @property (nonatomic, copy) NSArray<Class> *originalPoolOfProtocol;
 
 /// 当前task下需要遍历的protocol pool
