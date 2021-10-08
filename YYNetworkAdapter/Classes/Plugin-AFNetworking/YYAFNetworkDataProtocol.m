@@ -22,7 +22,7 @@
 @dynamic client;
 
 + (BOOL)canInitWithRequest:(YYNetworkRequest *)request {
-    if ([request.gatewayIdentifier isEqualToString:@"AFNetworking-data"]) {
+    if ([request.gatewayIdentifier isEqualToString:YYNetworkRequestAFNetworking_data]) {
         return YES;
     }
     return NO;
