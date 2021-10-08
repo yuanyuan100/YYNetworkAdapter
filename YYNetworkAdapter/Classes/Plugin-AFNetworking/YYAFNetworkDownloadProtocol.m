@@ -33,12 +33,12 @@
     YYAFNetworkSessionTask *task = (id)self.client;
     __weak typeof(self) weakSelf = self;
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.request.url]];
-    task.sessionTask = [[session downloadTaskWithRequest:req progress:^(NSProgress * _Nonnull downloadProgress) {
+    task.sessionTask = [session downloadTaskWithRequest:req progress:^(NSProgress * _Nonnull downloadProgress) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.client protocol:strongSelf downloadProgress:downloadProgress];
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.client protocol:strongSelf targetPath:targetPath response:response];
+        return [strongSelf.client protocol:strongSelf targetPath:targetPath response:response];
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (error) {
@@ -81,3 +81,5 @@
     }
     
 }
+
+@end
