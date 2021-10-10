@@ -9,6 +9,10 @@
 #import <YYNetworkAdapter/YYNetworkRequest.h>
 #import <AFNetworking/AFNetworking.h>
 #import "YYAFHTTPSessionManager.h"
+#import "YYAFNetworkProtocolClient.h"
+#import "YYAFNetworkSessionTask.h"
+#import "YYAFNetworkSession.h"
+
 
 @interface YYAFNetworkUploadProtocol ()
 
